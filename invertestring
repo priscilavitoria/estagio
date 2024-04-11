@@ -2,12 +2,19 @@ package InverteString;
 
 public class InverteString {
 
-
-    public static void inverteString(String str) {
+    public static String inverteString(String str) {
         StringBuilder inversa = new StringBuilder();
-        for (int i = str.length() - 1; i >= 0; i--) {
-            inversa.append(str.toCharArray()[i]);
+        char[] caracteres = str.toCharArray();  
+        for (int i = caracteres.length - 1; i >= 0; i--) {
+            inversa.append(caracteres[i]);
         }
-        System.out.printf("Palavra invertida: %s\n", inversa);
+        return inversa.toString();
+    }
+
+    public static void main(String[] args) {
+        String original = "Exemplo";
+        String invertida = inverteString(original);
+        System.out.printf("Palavra original: %s\n", original);
+        System.out.printf("Palavra invertida: %s\n", invertida);
     }
 }
